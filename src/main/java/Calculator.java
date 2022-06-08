@@ -1,0 +1,26 @@
+public class Calculator {
+    public Money calculate(int weight, int height, int width, int depth, Currency currency) {
+        double postageInBaseCurrency = postageInBaseCurrency(weight, height, width, depth);
+        return convertCurrency(postageInBaseCurrency, currency);
+    }
+
+    private double postageInBaseCurrency(int weight, int height, int width, int depth) {
+        if (weight <= 60 && height <= 229 && width <= 162 && depth <= 25) {
+            return 120;
+        }
+        if (weight <= 500 && height <= 324 && width <= 229 && depth <= 100) {
+            return weight * 4;
+        }
+        return Math.max(weight, height * width * depth / 1000) * 6;
+    }
+
+    private Money convertCurrency(double amountInBaseCurrency, Currency currency) {
+        if (currency == Currency.Gbp)
+            return new Money(Currency.Gbp, amountInBaseCurrency);
+        if (currency == Currency.Eur)
+            return new Money(Currency.Eur, (amountInBaseCurrency + 200) * 1.25);
+        if (currency == Currency.Chf)
+            return new Money(Currency.Chf, (amountInBaseCurrency + 200) * 1.36);
+        return null;
+    }
+}
