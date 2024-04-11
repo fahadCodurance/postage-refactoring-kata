@@ -58,4 +58,14 @@ public class Package {
     private boolean isSmallPackage() {
         return getWeight() <= 60 && getHeight() <= 229 && getWidth() <= 162 && getDepth() <= 25;
     }
+
+    @Override
+    public String toString() {
+        return "Package{" +
+                "weight=" + weight +
+                ", height=" + height +
+                ", width=" + width +
+                ", depth=" + depth +
+                '}';
+    }
 }

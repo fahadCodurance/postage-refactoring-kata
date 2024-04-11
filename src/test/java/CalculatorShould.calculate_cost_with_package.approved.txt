@@ -1,0 +1,20 @@
+[Package{weight=0, height=0, width=0, depth=0}, Gbp] => Money{currency=Gbp, amount=120.00} 
+[Package{weight=0, height=0, width=0, depth=0}, Chf] => Money{currency=Chf, amount=435.20} 
+[Package{weight=0, height=0, width=0, depth=0}, Eur] => Money{currency=Eur, amount=400.00} 
+[Package{weight=0, height=0, width=0, depth=0}, null] => Cannot invoke "Money.toString()" because the return value of "Calculator.calculate(Package, Currency)" is null 
+[Package{weight=60, height=229, width=162, depth=25}, Gbp] => Money{currency=Gbp, amount=120.00} 
+[Package{weight=60, height=229, width=162, depth=25}, Chf] => Money{currency=Chf, amount=435.20} 
+[Package{weight=60, height=229, width=162, depth=25}, Eur] => Money{currency=Eur, amount=400.00} 
+[Package{weight=60, height=229, width=162, depth=25}, null] => Cannot invoke "Money.toString()" because the return value of "Calculator.calculate(Package, Currency)" is null 
+[Package{weight=61, height=230, width=163, depth=26}, Gbp] => Money{currency=Gbp, amount=244.00} 
+[Package{weight=61, height=230, width=163, depth=26}, Chf] => Money{currency=Chf, amount=603.84} 
+[Package{weight=61, height=230, width=163, depth=26}, Eur] => Money{currency=Eur, amount=555.00} 
+[Package{weight=61, height=230, width=163, depth=26}, null] => Cannot invoke "Money.toString()" because the return value of "Calculator.calculate(Package, Currency)" is null 
+[Package{weight=500, height=324, width=229, depth=100}, Gbp] => Money{currency=Gbp, amount=2000.00} 
+[Package{weight=500, height=324, width=229, depth=100}, Chf] => Money{currency=Chf, amount=2992.00} 
+[Package{weight=500, height=324, width=229, depth=100}, Eur] => Money{currency=Eur, amount=2750.00} 
+[Package{weight=500, height=324, width=229, depth=100}, null] => Cannot invoke "Money.toString()" because the return value of "Calculator.calculate(Package, Currency)" is null 
+[Package{weight=502, height=325, width=230, depth=101}, Gbp] => Money{currency=Gbp, amount=45294.00} 
+[Package{weight=502, height=325, width=230, depth=101}, Chf] => Money{currency=Chf, amount=61871.84} 
+[Package{weight=502, height=325, width=230, depth=101}, Eur] => Money{currency=Eur, amount=56867.50} 
+[Package{weight=502, height=325, width=230, depth=101}, null] => Cannot invoke "Money.toString()" because the return value of "Calculator.calculate(Package, Currency)" is null 
