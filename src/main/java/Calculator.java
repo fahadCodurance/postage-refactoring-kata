@@ -1,4 +1,9 @@
 public class Calculator {
+    public Money calculate(Package aPackage, Currency currency) {
+        double postageInBaseCurrency = postageInBaseCurrency(aPackage);
+        return convertCurrency(postageInBaseCurrency, currency);
+    }
+    @Deprecated
     public Money calculate(int weight, int height, int width, int depth, Currency currency) {
         double postageInBaseCurrency = postageInBaseCurrency(new Package(weight, height, width, depth));
         return convertCurrency(postageInBaseCurrency, currency);
