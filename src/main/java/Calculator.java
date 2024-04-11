@@ -9,13 +9,7 @@ public class Calculator {
     }
 
     private double postageInBaseCurrency(Package aPackage) {
-        if (aPackage.getWeight() <= 60 && aPackage.getHeight() <= 229 && aPackage.getWidth() <= 162 && aPackage.getDepth() <= 25) {
-            return 120;
-        }
-        if (aPackage.getWeight() <= 500 && aPackage.getHeight() <= 324 && aPackage.getWidth() <= 229 && aPackage.getDepth() <= 100) {
-            return aPackage.getWeight() * 4;
-        }
-        return Math.max(aPackage.getWeight(), aPackage.getHeight() * aPackage.getWidth() * aPackage.getDepth() / 1000) * 6;
+        return aPackage.postageInBaseCurrency();
     }
 
     private Money convertCurrency(double amountInBaseCurrency, Currency currency) {
