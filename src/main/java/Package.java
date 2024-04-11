@@ -30,12 +30,32 @@ public class Package {
 
 
     public double postageInBaseCurrency() {
-        if (getWeight() <= 60 && getHeight() <= 229 && getWidth() <= 162 && getDepth() <= 25) {
-            return 120;
+        if (isSmallPackage()) {
+            return calculateSmallPackage();
         }
-        if (getWeight() <= 500 && getHeight() <= 324 && getWidth() <= 229 && getDepth() <= 100) {
-            return getWeight() * 4;
+        if (isMediumPackage()) {
+            return calculateMediumPackage();
         }
+        return calculateLargePackage();
+    }
+
+    private int calculateLargePackage() {
         return Math.max(getWeight(), getHeight() * getWidth() * getDepth() / 1000) * 6;
+    }
+
+    private int calculateMediumPackage() {
+        return getWeight() * 4;
+    }
+
+    private static int calculateSmallPackage() {
+        return 120;
+    }
+
+    private boolean isMediumPackage() {
+        return getWeight() <= 500 && getHeight() <= 324 && getWidth() <= 229 && getDepth() <= 100;
+    }
+
+    private boolean isSmallPackage() {
+        return getWeight() <= 60 && getHeight() <= 229 && getWidth() <= 162 && getDepth() <= 25;
     }
 }
