@@ -1,17 +1,17 @@
 public class Calculator {
     public Money calculate(int weight, int height, int width, int depth, Currency currency) {
-        double postageInBaseCurrency = postageInBaseCurrency(weight, height, width, depth);
+        double postageInBaseCurrency = postageInBaseCurrency(new Package(weight, height, width, depth));
         return convertCurrency(postageInBaseCurrency, currency);
     }
 
-    private double postageInBaseCurrency(int weight, int height, int width, int depth) {
-        if (weight <= 60 && height <= 229 && width <= 162 && depth <= 25) {
+    private double postageInBaseCurrency(Package aPackage) {
+        if (aPackage.getWeight() <= 60 && aPackage.getHeight() <= 229 && aPackage.getWidth() <= 162 && aPackage.getDepth() <= 25) {
             return 120;
         }
-        if (weight <= 500 && height <= 324 && width <= 229 && depth <= 100) {
-            return weight * 4;
+        if (aPackage.getWeight() <= 500 && aPackage.getHeight() <= 324 && aPackage.getWidth() <= 229 && aPackage.getDepth() <= 100) {
+            return aPackage.getWeight() * 4;
         }
-        return Math.max(weight, height * width * depth / 1000) * 6;
+        return Math.max(aPackage.getWeight(), aPackage.getHeight() * aPackage.getWidth() * aPackage.getDepth() / 1000) * 6;
     }
 
     private Money convertCurrency(double amountInBaseCurrency, Currency currency) {
